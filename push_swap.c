@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:34:53 by cdutel            #+#    #+#             */
-/*   Updated: 2023/11/30 15:59:58 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/01 16:27:17 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ t_pile	set_pile(int argc, char **argv)
 		temp = push_pile(temp, nb);
 		i--;
 	}
+	if (check_doublons(temp) == 1)
+	{
+		write(2, "Error\n", 6);
+		temp = clear_pile(temp);
+		return (temp);
+	}
 	return (temp);
 }
 
@@ -48,8 +54,6 @@ int	main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			return (1);
 		}
-		//-Gérer les erreurs : paramètre qui ne sont pas de nombres,
-		//si ils ne tiennent pas dans un int, si il y a des doublons : afficher "Error\n"
 		pile_a = set_pile(argc, argv);
 		if (!pile_a)
 			return (1);

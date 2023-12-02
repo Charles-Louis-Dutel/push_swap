@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:22:15 by cdutel            #+#    #+#             */
-/*   Updated: 2023/11/30 15:55:03 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/02 03:30:51 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,14 @@ int	check_args(int argc, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
+			if (!(argv[i][j] == '-' || argv[i][j] == '+' ||
+			(argv[i][j] >= '0' && argv[i][j] <= '9')))
 				return (1);
+			if (argv[i][j] == '-' || argv[i][j] == '+')
+			{
+				if (argv[i][j + 1] == '-' || argv[i][j + 1] == '+')
+					return (1);
+			}
 			j++;
 		}
 		i++;
@@ -59,8 +65,48 @@ long	ft_atoi_modif(const char *str)
 		return (11111111111);
 	return (nb);
 }
-/*int main()
+
+static int	*pile_to_tab(int *tab, t_pile pile)
 {
-	__builtin_printf("%ld\n", ft_atoi_modif("-152147483649"));
+	t_pile	temp;
+	int		i;
+
+	temp = pile;
+	i = 0;
+	while (temp)
+	{
+		tab[i] = temp->nbr;
+		i++;
+		temp = temp->next;
+	}
+	return (tab);
+}
+
+int check_doublons(t_pile pile)
+{
+	int		len;
+	int		i;
+	int		j;
+	int		*tab;
+
+	len = pile_len(pile);
+	tab = malloc(sizeof(int) * len);
+	tab = pile_to_tab(tab, pile);
+	i = 0;
+	while (i < len - 1)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			if (tab[j] == tab[i])
+			{
+				free(tab);
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	free(tab);
 	return (0);
-}*/
+}
