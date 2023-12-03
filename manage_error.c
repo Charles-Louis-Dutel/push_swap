@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:22:15 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/02 03:30:51 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/03 13:44:06 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_args(int argc, char **argv)
 				return (1);
 			if (argv[i][j] == '-' || argv[i][j] == '+')
 			{
-				if (argv[i][j + 1] == '-' || argv[i][j + 1] == '+')
+				if (!(argv[i][j + 1] >= '0' && argv[i][j + 1] <= '9'))
 					return (1);
 			}
 			j++;
@@ -40,9 +40,9 @@ int	check_args(int argc, char **argv)
 
 long	ft_atoi_modif(const char *str)
 {
-	int	i;
+	int			i;
 	long long	nb;
-	int	sign;
+	int			sign;
 
 	i = 0;
 	nb = 0;
@@ -82,7 +82,7 @@ static int	*pile_to_tab(int *tab, t_pile pile)
 	return (tab);
 }
 
-int check_doublons(t_pile pile)
+int	check_doublons(t_pile pile)
 {
 	int		len;
 	int		i;

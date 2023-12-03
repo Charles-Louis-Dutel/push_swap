@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:34:53 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/01 16:27:17 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:22:08 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,40 @@ t_pile	set_pile(int argc, char **argv)
 	return (temp);
 }
 
+static t_pile	exec_command(t_pile pile_a)
+{
+	t_pile	pile_b;
+
+	pile_b = new_pile();
+	/*swap*/
+	//pile_a = swap(pile_a);
+	//pile_b = swap(pile_b)
+
+	/*push a to b*/
+	//pile_b = push(pile_a, pile_b);
+	//pile_a = pop_one(pile_a);
+
+	/*push b to a*/
+	//pile_a = push(pile_b, pile_a);
+	//pile_b = pop_one(pile_b);
+
+	/*rotate a*/
+	//pile_a = rotate(pile_a);
+
+	/*rotate b*/
+	//pile_b = rotate(pile_b);
+
+	/*reverse rotate a*/
+	pile_a = rev_rotate(pile_a);
+	__builtin_printf("\n");
+	print_pile(pile_a);
+	/*__builtin_printf("\n");
+	print_pile(pile_b);
+
+	clear_pile(pile_b);*/
+	return (pile_a);
+}
+
 int	main(int argc, char **argv)
 {
 	t_pile	pile_a;
@@ -58,6 +92,10 @@ int	main(int argc, char **argv)
 		if (!pile_a)
 			return (1);
 		print_pile(pile_a);
+		pile_a = exec_command(pile_a);
+		//__builtin_printf("\n");
+		//print_pile(pile_a);
+
 		pile_a = clear_pile(pile_a);
 	}
 	return (0);

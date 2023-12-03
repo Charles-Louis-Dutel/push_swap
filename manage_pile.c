@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_pile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:14:03 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/02 03:30:18 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:28:22 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,23 @@ t_pile	push_pile(t_pile pile, int nbr)
 {
 	t_pile	elem;
 
-	elem = malloc(sizeof(t_pile) * 2);
+	elem = malloc(sizeof(struct pile_elem));
 	if (!elem)
 		return (NULL);
 	elem->nbr = nbr;
 	elem->next = pile;
+	return (elem);
+}
+
+t_pile	new_elem(int nbr)
+{
+	t_pile	elem;
+
+	elem = malloc(sizeof(struct pile_elem));
+	if (!elem)
+		return (NULL);
+	elem->nbr = nbr;
+	elem->next = NULL;
 	return (elem);
 }
 
@@ -59,7 +71,7 @@ void	print_pile(t_pile pile)
 	}
 }
 
-t_pile	depiler(t_pile pile)
+t_pile	pop_one(t_pile pile)
 {
 	t_pile	temp;
 
