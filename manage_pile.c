@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_pile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:14:03 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/03 19:28:22 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/04 14:59:26 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ t_pile	new_pile(void)
 	return (NULL);
 }
 
-int	is_pile_empty(t_pile pile)
+/*int	is_pile_empty(t_pile pile)
 {
 	if (pile == NULL)
 		return (1);
 	return (0);
-}
+}*/
 
 t_pile	push_pile(t_pile pile, int nbr)
 {
@@ -53,7 +53,7 @@ t_pile	clear_pile(t_pile pile)
 {
 	t_pile	temp;
 
-	if (is_pile_empty(pile))
+	if (!pile)
 		return (new_pile());
 	temp = pile->next;
 	free(pile);
@@ -62,9 +62,9 @@ t_pile	clear_pile(t_pile pile)
 
 void	print_pile(t_pile pile)
 {
-	if (is_pile_empty(pile))
+	if (!pile)
 		return ;
-	while (!is_pile_empty(pile))
+	while (pile)
 	{
 		printf("[%d]\n", pile->nbr);
 		pile = pile->next;
@@ -75,7 +75,7 @@ t_pile	pop_one(t_pile pile)
 {
 	t_pile	temp;
 
-	if (is_pile_empty(pile))
+	if (!pile)
 		return (new_pile());
 	temp = pile->next;
 	free(pile);
