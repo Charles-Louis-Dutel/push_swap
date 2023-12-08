@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:14:03 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/08 16:02:16 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:26:15 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ void	push_pile(t_pile **pile, int nbr)
 		*pile = elem;
 }
 
-// t_pile	*new_elem(int nbr)
-// {
-// 	t_pile	*elem;
+t_pile	*new_elem(int nbr)
+{
+	t_pile	*elem;
 
-// 	elem = malloc(sizeof(struct pile_elem));
-// 	if (!elem)
-// 		return (NULL);
-// 	elem->nbr = nbr;
-// 	elem->next = NULL;
-// 	return (elem);
-// }
+	elem = malloc(sizeof(struct pile_elem));
+	if (!elem)
+		return (NULL);
+	elem->nbr = nbr;
+	elem->next = NULL;
+	return (elem);
+}
 
 void	clear_pile(t_pile **pile)
 {

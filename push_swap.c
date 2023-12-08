@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:34:53 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/08 15:55:14 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:27:59 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,21 @@ t_pile	*set_pile(int argc, char **argv)
 static void	exec_command(t_pile **pile_a)
 {
 	t_pile	*pile_b;
+
 	//pile_b = new_pile();
+
 	/*swap*/
-	swap(pile_a);
-	//pile_b = swap(pile_b)
+	//swap(pile_a);
+	//swap(pile_b);
 
 	/*push a to b == push b*/
-	//pile_b = push(pile_a, pile_b);
-	//pile_a = pop_one(pile_a);
+	//push(pile_a, &pile_b);
 
 	/*push b to a == push a*/
-	//pile_a = push(pile_b, pile_a);
-	//pile_b = pop_one(pile_b);
+	//push(&pile_b, pile_a);
 
 	/*rotate a*/
-	//pile_a = rotate(pile_a);
+	rotate(pile_a);
 
 	/*rotate b*/
 	//pile_b = rotate(pile_b);
@@ -71,12 +71,12 @@ static void	exec_command(t_pile **pile_a)
 	/*reverse rotate b*/
 	//pile_b = rev_rotate(pile_b);
 
-	//__builtin_printf("v\n");
-	//print_pile(pile_a);
-	//__builtin_printf("v\n");
-	//print_pile(pile_b);
+	// __builtin_printf("v\n");
+	// print_pile(pile_a);
+	// __builtin_printf("v\n");
+	// print_pile(&pile_b);
 
-	//pile_b = clear_pile(pile_b);
+	//clear_pile(&pile_b);
 	//return (*pile_a);
 }
 

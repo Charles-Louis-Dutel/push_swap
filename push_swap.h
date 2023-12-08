@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:02:51 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/08 15:45:00 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:33:22 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ void	push_pile(t_pile **pile, int nbr);
 void	clear_pile(t_pile **pile);
 void	print_pile(t_pile **pile);
 void	pop_one(t_pile **pile);
-//t_pile	*new_elem(int nbr);
+t_pile	*new_elem(int nbr);
 
 /*Utils*/
-t_pile	*get_last(t_pile *pile);
+t_pile	*get_last(t_pile **pile);
 int		pile_len(t_pile *pile);
 /*Command*/
 void	swap(t_pile **pile);
-t_pile	push(t_pile from, t_pile to);
-t_pile	rotate(t_pile pile);
-t_pile	rev_rotate(t_pile pile);
+void	push(t_pile **from, t_pile **to);
+void	rotate(t_pile **pile);
+void	rev_rotate(t_pile **pile);
 
 #endif
