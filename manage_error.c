@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:22:15 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/03 13:44:06 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/08 14:30:55 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ long	ft_atoi_modif(const char *str)
 	return (nb);
 }
 
-static int	*pile_to_tab(int *tab, t_pile pile)
+static int	*pile_to_tab(int *tab, t_pile *pile)
 {
-	t_pile	temp;
+	t_pile	*temp;
 	int		i;
 
 	temp = pile;
@@ -82,7 +82,7 @@ static int	*pile_to_tab(int *tab, t_pile pile)
 	return (tab);
 }
 
-int	check_doublons(t_pile pile)
+int	check_doublons(t_pile *pile)
 {
 	int		len;
 	int		i;

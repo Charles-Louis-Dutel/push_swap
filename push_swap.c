@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:34:53 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/04 15:26:27 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/08 15:55:14 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-t_pile	set_pile(int argc, char **argv)
+t_pile	*set_pile(int argc, char **argv)
 {
-	t_pile	temp;
+	t_pile	*temp;
 	int		i;
 	long	nb;
 
@@ -28,28 +28,27 @@ t_pile	set_pile(int argc, char **argv)
 		if (nb == 11111111111)
 		{
 			write(2, "Error\n", 6);
-			temp = clear_pile(temp);
-			return (temp);
+			clear_pile(&temp);
+			return (new_pile());
 		}
-		temp = push_pile(temp, nb);
+		push_pile(&temp, nb);
 		i--;
 	}
 	if (check_doublons(temp) == 1)
 	{
 		write(2, "Error\n", 6);
-		temp = clear_pile(temp);
-		return (temp);
+		clear_pile(&temp);
+		return (new_pile());
 	}
 	return (temp);
 }
 
-static t_pile	exec_command(t_pile pile_a)
+static void	exec_command(t_pile **pile_a)
 {
-	t_pile	pile_b;
-
+	t_pile	*pile_b;
 	//pile_b = new_pile();
 	/*swap*/
-	//pile_a = swap(pile_a);
+	swap(pile_a);
 	//pile_b = swap(pile_b)
 
 	/*push a to b == push b*/
@@ -78,44 +77,44 @@ static t_pile	exec_command(t_pile pile_a)
 	//print_pile(pile_b);
 
 	//pile_b = clear_pile(pile_b);
-	return (pile_a);
+	//return (*pile_a);
 }
 
-static t_pile	test(t_pile pile_a)
-{
-	t_pile	pile_b;
+// static t_pile	test(t_pile pile_a)
+// {
+// 	t_pile	pile_b;
 
-	pile_b = new_pile();
+// 	pile_b = new_pile();
 
-	pile_a = swap(pile_a);
+// 	pile_a = swap(pile_a);
 
-	pile_b = push(pile_a, pile_b);
-	pile_a = pop_one(pile_a);
+// 	pile_b = push(pile_a, pile_b);
+// 	pile_a = pop_one(pile_a);
 
-	pile_b = push(pile_a, pile_b);
-	pile_a = pop_one(pile_a);
+// 	pile_b = push(pile_a, pile_b);
+// 	pile_a = pop_one(pile_a);
 
-	pile_b = push(pile_a, pile_b);
-	pile_a = pop_one(pile_a);
+// 	pile_b = push(pile_a, pile_b);
+// 	pile_a = pop_one(pile_a);
 
-	pile_a = swap(pile_a);
+// 	pile_a = swap(pile_a);
 
-	pile_a = push(pile_b, pile_a);
-	pile_b = pop_one(pile_b);
+// 	pile_a = push(pile_b, pile_a);
+// 	pile_b = pop_one(pile_b);
 
-	pile_a = push(pile_b, pile_a);
-	pile_b = pop_one(pile_b);
+// 	pile_a = push(pile_b, pile_a);
+// 	pile_b = pop_one(pile_b);
 
-	pile_a = push(pile_b, pile_a);
-	pile_b = pop_one(pile_b);
+// 	pile_a = push(pile_b, pile_a);
+// 	pile_b = pop_one(pile_b);
 
-	pile_b = clear_pile(pile_b);
-	return (pile_a);
-}
+// 	pile_b = clear_pile(pile_b);
+// 	return (pile_a);
+// }
 
 int	main(int argc, char **argv)
 {
-	t_pile	pile_a;
+	t_pile	*pile_a;
 
 	if (argc > 1)
 	{
@@ -128,13 +127,12 @@ int	main(int argc, char **argv)
 		pile_a = set_pile(argc, argv);
 		if (!pile_a)
 			return (1);
-		print_pile(pile_a);
-		//pile_a = exec_command(pile_a);
-		pile_a = test(pile_a);
+		print_pile(&pile_a);
+		exec_command(&pile_a);
 		__builtin_printf("\n");
-		print_pile(pile_a);
+		print_pile(&pile_a);
 
-		pile_a = clear_pile(pile_a);
+		clear_pile(&pile_a);
 	}
 	return (0);
 }

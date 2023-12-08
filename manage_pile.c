@@ -6,14 +6,14 @@
 /*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:14:03 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/04 14:59:26 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/08 16:02:16 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-t_pile	new_pile(void)
+t_pile	*new_pile(void)
 {
 	return (NULL);
 }
@@ -25,61 +25,75 @@ t_pile	new_pile(void)
 	return (0);
 }*/
 
-t_pile	push_pile(t_pile pile, int nbr)
+void	push_pile(t_pile **pile, int nbr)
 {
-	t_pile	elem;
+	t_pile	*elem;
+	t_pile	*temp;
 
 	elem = malloc(sizeof(struct pile_elem));
 	if (!elem)
-		return (NULL);
-	elem->nbr = nbr;
-	elem->next = pile;
-	return (elem);
-}
-
-t_pile	new_elem(int nbr)
-{
-	t_pile	elem;
-
-	elem = malloc(sizeof(struct pile_elem));
-	if (!elem)
-		return (NULL);
+		return ;
 	elem->nbr = nbr;
 	elem->next = NULL;
-	return (elem);
+	if (*pile)
+	{
+		temp = *pile;
+		*pile = elem;
+		(*pile)->next = temp;
+	}
+	else
+		*pile = elem;
 }
 
-t_pile	clear_pile(t_pile pile)
-{
-	t_pile	temp;
+// t_pile	*new_elem(int nbr)
+// {
+// 	t_pile	*elem;
 
-	if (!pile)
-		return (new_pile());
-	temp = pile->next;
-	free(pile);
-	return (clear_pile(temp));
-}
+// 	elem = malloc(sizeof(struct pile_elem));
+// 	if (!elem)
+// 		return (NULL);
+// 	elem->nbr = nbr;
+// 	elem->next = NULL;
+// 	return (elem);
+// }
 
-void	print_pile(t_pile pile)
+void	clear_pile(t_pile **pile)
 {
+	t_pile	*temp;
+
 	if (!pile)
 		return ;
-	while (pile)
+	while (*pile)
 	{
-		printf("[%d]\n", pile->nbr);
-		pile = pile->next;
+		temp = (*pile)->next;
+		free(*pile);
+		*pile = temp;
+	}
+	*pile = NULL;
+}
+
+void	print_pile(t_pile **pile)
+{
+	t_pile	*temp;
+	if (!pile)
+		return ;
+	temp = *pile;
+	while (temp)
+	{
+		printf("[%d]\n", temp->nbr);
+		temp = temp->next;
 	}
 }
 
-t_pile	pop_one(t_pile pile)
+void	pop_one(t_pile **pile)
 {
-	t_pile	temp;
+	t_pile	*temp;
 
 	if (!pile)
-		return (new_pile());
-	temp = pile->next;
-	free(pile);
-	return (temp);
+		return ;
+	temp = (*pile)->next;
+	free(*pile);
+	*pile = temp;
 }
 
 /*
