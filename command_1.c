@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 14:21:59 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/08 16:34:28 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/08 17:11:09 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,29 +61,18 @@ void	rotate(t_pile **pile)
 
 void	rev_rotate(t_pile **pile)
 {
-	t_pile	*temp;
 	t_pile	*last;
-	t_pile	*new;
-	t_pile	*head;
+	t_pile	*temp;
+	int		last_num;
 
-	if (pile && pile->next)
+	last = get_last(pile);
+	last_num = last->nbr;
+	push_pile(pile, last_num);
+	temp = *pile;
+	while (temp->next != last)
 	{
-		last = get_last(pile);
-		new = push_pile(pile, last->nbr);
-		temp = new;
-		head = new;
-		while (temp)
-		{
-			temp = temp->next;
-			if (temp == last)
-			{
-				free(temp);
-				new->next = NULL;
-				break ;
-			}
-			new = new->next;
-		}
-		return (head);
+		temp = temp->next;
 	}
-	return (pile);
+	temp->next = NULL;
+	free(last);
 }

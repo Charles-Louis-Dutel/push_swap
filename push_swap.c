@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:34:53 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/08 16:27:59 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/08 17:03:50 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ static void	exec_command(t_pile **pile_a)
 	//push(&pile_b, pile_a);
 
 	/*rotate a*/
-	rotate(pile_a);
+	//rotate(pile_a);
 
 	/*rotate b*/
 	//pile_b = rotate(pile_b);
 
 	/*reverse rotate a*/
-	//pile_a = rev_rotate(pile_a);
+	rev_rotate(pile_a);
 
 	/*reverse rotate b*/
 	//pile_b = rev_rotate(pile_b);
