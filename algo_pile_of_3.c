@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 18:51:58 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/12 21:16:58 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/13 14:15:26 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	find_min_pos(t_pile **pile)
 	return (min_pos);
 }
 
-static int	find_max_pos(t_pile **pile)
+int	find_max_pos(t_pile **pile)
 {
 	int		max_pos;
 	int		pos;

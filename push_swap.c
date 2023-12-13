@@ -6,15 +6,14 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:34:53 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/12 18:45:22 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/13 13:27:15 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
-#include <stdio.h>
 
-t_pile	*set_pile(int argc, char **argv)
+static t_pile	*set_pile(int argc, char **argv)
 {
 	t_pile	*temp;
 	int		i;
@@ -43,21 +42,6 @@ t_pile	*set_pile(int argc, char **argv)
 	return (temp);
 }
 
-// static void	test(t_pile **pile_a, t_pile **pile_b)
-// {
-// 	swap_a(pile_a);
-
-// 	push_b(pile_a, pile_b);
-// 	push_b(pile_a, pile_b);
-// 	push_b(pile_a, pile_b);
-
-// 	swap_a(pile_a);
-
-// 	push_a(pile_b, pile_a);
-// 	push_a(pile_b, pile_a);
-// 	push_a(pile_b, pile_a);
-// }
-
 int	main(int argc, char **argv)
 {
 	t_pile	*pile_a;
@@ -76,11 +60,9 @@ int	main(int argc, char **argv)
 			return (1);
 		pile_b = new_pile();
 		print_pile(&pile_a);
-		//test(&pile_a, &pile_b);
 		choose_algo(&pile_a, &pile_b);
 		__builtin_printf("\n");
 		print_pile(&pile_a);
-
 		clear_pile(&pile_a);
 		clear_pile(&pile_b);
 	}

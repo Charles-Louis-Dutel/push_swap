@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 20:24:37 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/13 12:29:05 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/13 14:32:43 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,62 +59,33 @@ void	sort_and_push(t_pile **pile_a, t_pile **pile_b, int nbr_a)
 	temp = *pile_b;
 	min = find_minimum(pile_b);
 	if (min > nbr_a)
+		pos_inf = find_position(pile_b, min);
+	else
+		pos_inf = find_position_2(pile_b, min, nbr_a);
+	sort_help(pile_b, pos_inf);
+	push_b(pile_a, pile_b);
+}
+
+void	sort_b(t_pile **pile_b)
+{
+	int		pos_max;
+
+	pos_max = find_max_pos(pile_b);
+	if (pos_max < pile_len(pile_b) / 2)
 	{
-		while (temp)
+		while (pos_max != 0)
 		{
-			if (temp->nbr == min)
-				pos_inf = pos + 1;
-			pos++;
-			temp = temp->next;
+			rotate_b(pile_b);
+			pos_max--;
 		}
 	}
 	else
 	{
-		while (temp)
+		while (pos_max != pile_len(pile_b))
 		{
-			if (temp->nbr < nbr_a && temp->nbr >= min)
-			{
-				min = temp->nbr;
-				pos_inf = pos;
-			}
-			pos++;
-			temp = temp->next;
+			rev_rotate_b(pile_b);
+			pos_max++;
 		}
-	}
-	while (pos_inf != 0)
-	{
-		rotate_b(pile_b);
-		pos_inf--;
-	}
-	push_b(pile_a, pile_b);
-}
-
-
-void	sort_b(t_pile **pile_b)
-{
-	t_pile	*temp;
-	int		max;
-	int		pos_max;
-	int		pos;
-
-	temp = *pile_b;
-	max = temp->nbr;
-	pos = 0;
-	pos_max = 0;
-	while (temp)
-	{
-		if (temp->nbr > max)
-		{
-			max = temp->nbr;
-			pos_max = pos;
-		}
-		pos++;
-		temp = temp->next;
-	}
-	while (pos_max != 0)
-	{
-		rotate_b(pile_b);
-		pos_max--;
 	}
 }
 

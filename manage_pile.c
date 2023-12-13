@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_pile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:14:03 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/08 16:26:15 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/13 13:25:25 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,6 @@ t_pile	*new_pile(void)
 {
 	return (NULL);
 }
-
-/*int	is_pile_empty(t_pile pile)
-{
-	if (pile == NULL)
-		return (1);
-	return (0);
-}*/
 
 void	push_pile(t_pile **pile, int nbr)
 {
@@ -72,19 +65,6 @@ void	clear_pile(t_pile **pile)
 	*pile = NULL;
 }
 
-void	print_pile(t_pile **pile)
-{
-	t_pile	*temp;
-	if (!pile)
-		return ;
-	temp = *pile;
-	while (temp)
-	{
-		printf("[%d]\n", temp->nbr);
-		temp = temp->next;
-	}
-}
-
 void	pop_one(t_pile **pile)
 {
 	t_pile	*temp;
@@ -95,27 +75,3 @@ void	pop_one(t_pile **pile)
 	free(*pile);
 	*pile = temp;
 }
-
-/*
-int main()
-{
-	t_pile	test;
-
-	test = new_pile();
-	if (is_pile_empty(test))
-		printf("vide\n");
-
-	test = push_pile(test, 25);
-	test = push_pile(test, 58418);
-
-	if (is_pile_empty(test))
-		printf("vide\n");
-
-	print_stack(test);
-
-	test = clear_pile(test);
-	if (is_pile_empty(test))
-		printf("vide\n");
-
-	return (0);
-}*/
