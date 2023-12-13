@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   command_1.c                                        :+:      :+:    :+:   */
+/*   command_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 14:21:59 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/08 17:11:09 by cdutel           ###   ########.fr       */
+/*   Created: 2023/12/12 18:25:08 by cdutel            #+#    #+#             */
+/*   Updated: 2023/12/12 18:33:04 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_pile **pile)
+void	swap_b(t_pile **pile)
 {
 	int		first;
 	int		second;
@@ -28,9 +28,10 @@ void	swap(t_pile **pile)
 		push_pile(pile, first);
 		push_pile(pile, second);
 	}
+	printf("sb\n");
 }
 
-void	push(t_pile **from, t_pile **to)
+void	push_b(t_pile **from, t_pile **to)
 {
 	t_pile	*temp;
 	int		first;
@@ -41,9 +42,10 @@ void	push(t_pile **from, t_pile **to)
 	first = temp->nbr;
 	push_pile(to, first);
 	pop_one(from);
+	printf("pb\n");
 }
 
-void	rotate(t_pile **pile)
+void	rotate_b(t_pile **pile)
 {
 	t_pile	*last;
 	int		first;
@@ -57,9 +59,10 @@ void	rotate(t_pile **pile)
 		last = get_last(pile);
 		last->next = new_elem(first);
 	}
+	printf("rb\n");
 }
 
-void	rev_rotate(t_pile **pile)
+void	rev_rotate_b(t_pile **pile)
 {
 	t_pile	*last;
 	t_pile	*temp;
@@ -75,4 +78,5 @@ void	rev_rotate(t_pile **pile)
 	}
 	temp->next = NULL;
 	free(last);
+	printf("rrb\n");
 }

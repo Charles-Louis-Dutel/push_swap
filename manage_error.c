@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:22:15 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/08 14:30:55 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/12 19:14:53 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	check_doublons(t_pile *pile)
 	int		j;
 	int		*tab;
 
-	len = pile_len(pile);
+	len = pile_len(&pile);
 	tab = malloc(sizeof(int) * len);
 	tab = pile_to_tab(tab, pile);
 	i = 0;
