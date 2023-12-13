@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 20:24:37 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/13 14:32:43 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/13 15:18:51 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,10 @@ int	find_minimum(t_pile **pile_b)
 
 void	sort_and_push(t_pile **pile_a, t_pile **pile_b, int nbr_a)
 {
-	t_pile	*temp;
 	int		pos_inf;
-	int		pos;
 	int		min;
 
 	pos_inf = 0;
-	pos = 0;
-	temp = *pile_b;
 	min = find_minimum(pile_b);
 	if (min > nbr_a)
 		pos_inf = find_position(pile_b, min);

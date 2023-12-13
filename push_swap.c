@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:34:53 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/13 13:27:15 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/13 17:14:00 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ int	main(int argc, char **argv)
 		if (!pile_a)
 			return (1);
 		pile_b = new_pile();
-		print_pile(&pile_a);
+		/*print_pile(&pile_a);*/
 		choose_algo(&pile_a, &pile_b);
-		__builtin_printf("\n");
-		print_pile(&pile_a);
+		/*__builtin_printf("\n");
+		print_pile(&pile_a);*/
 		clear_pile(&pile_a);
 		clear_pile(&pile_b);
 	}
