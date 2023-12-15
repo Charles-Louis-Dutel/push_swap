@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:52:41 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/13 14:33:01 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/15 00:27:31 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,36 @@ void	sort_help(t_pile **pile_b, int pos_inf)
 			pos_inf++;
 		}
 	}
+}
+
+int	find_minimum(t_pile **pile)
+{
+	t_pile	*temp;
+	int		min;
+
+	temp = *pile;
+	min = temp->nbr;
+	while (temp)
+	{
+		if (min > temp->nbr)
+			min = temp->nbr;
+		temp = temp->next;
+	}
+	return (min);
+}
+
+int	find_maximum(t_pile **pile)
+{
+	t_pile	*temp;
+	int		max;
+
+	temp = *pile;
+	max = temp->nbr;
+	while (temp)
+	{
+		if (max < temp->nbr)
+			max = temp->nbr;
+		temp = temp->next;
+	}
+	return (max);
 }

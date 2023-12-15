@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo_pile_of_3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 18:51:58 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/13 14:15:26 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/15 00:34:27 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	find_min_pos(t_pile **pile)
+int	find_min_pos(t_pile **pile)
 {
 	int		min_pos;
 	int		pos;
@@ -89,29 +89,29 @@ void	pile_of_3(t_pile **pile_a)
 	}
 }
 
-void	rev_pile_of_3(t_pile **pile_b)
-{
-	int	min_pos;
-	int	max_pos;
+// void	rev_pile_of_3(t_pile **pile_b)
+// {
+// 	int	min_pos;
+// 	int	max_pos;
 
-	min_pos = find_min_pos(pile_b);
-	max_pos = find_max_pos(pile_b);
-	if (pile_len(pile_b) < 3 && min_pos == 0)
-		swap_b(pile_b);
-	else if (pile_len(pile_b) == 3 && min_pos == 1 && max_pos == 2)
-		rev_rotate_b(pile_b);
-	else if (pile_len(pile_b) == 3 && min_pos == 0 && max_pos == 1)
-		rotate_b(pile_b);
-	else if (pile_len(pile_b) == 3 && min_pos == 2 && max_pos == 1)
-		swap_b(pile_b);
-	else if (pile_len(pile_b) == 3 && min_pos == 0 && max_pos == 2)
-	{
-		swap_b(pile_b);
-		rev_rotate_b(pile_b);
-	}
-	else if (pile_len(pile_b) == 3 && min_pos == 1 && max_pos == 0)
-	{
-		swap_b(pile_b);
-		rotate_b(pile_b);
-	}
-}
+// 	min_pos = find_min_pos(pile_b);
+// 	max_pos = find_max_pos(pile_b);
+// 	if (pile_len(pile_b) < 3 && min_pos == 0)
+// 		swap_b(pile_b);
+// 	else if (pile_len(pile_b) == 3 && min_pos == 1 && max_pos == 2)
+// 		rev_rotate_b(pile_b);
+// 	else if (pile_len(pile_b) == 3 && min_pos == 0 && max_pos == 1)
+// 		rotate_b(pile_b);
+// 	else if (pile_len(pile_b) == 3 && min_pos == 2 && max_pos == 1)
+// 		swap_b(pile_b);
+// 	else if (pile_len(pile_b) == 3 && min_pos == 0 && max_pos == 2)
+// 	{
+// 		swap_b(pile_b);
+// 		rev_rotate_b(pile_b);
+// 	}
+// 	else if (pile_len(pile_b) == 3 && min_pos == 1 && max_pos == 0)
+// 	{
+// 		swap_b(pile_b);
+// 		rotate_b(pile_b);
+// 	}
+// }

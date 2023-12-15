@@ -1,9 +1,9 @@
 NAME = push_swap
 SRCS = \
-	algo_pile_of_3.c algo_utils.c algo.c \
+	algo_pile_of_3.c algo_pile_of_5.c algo_utils.c \
 	command_a.c command_b.c manage_error.c \
 	manage_pile.c push_swap.c selecting_algo.c \
-	utils.c \
+	utils.c algo.c \
 
 OBJS = ${SRCS:.c=.o}
 CC = cc

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:02:51 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/13 14:31:10 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/15 00:34:41 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,23 @@ void	rev_rotate_b(t_pile **pile);
 /*Algo*/
 void	choose_algo(t_pile **pile_a, t_pile **pile_b);
 void	sort_pile(t_pile **pile_a, t_pile **pile_b);
+void	sort_b(t_pile **pile_b);
+void	sort_and_push(t_pile **pile_a, t_pile **pile_b, int nbr_a);
 
 /*Alog_utils*/
 int		find_position(t_pile **pile_b, int min);
 int		find_position_2(t_pile **pile_b, int min, int nbr_a);
 void	sort_help(t_pile **pile_b, int pos_inf);
+int		find_minimum(t_pile **pile);
+int		find_maximum(t_pile **pile);
 
 /*Pile of 3*/
 void	pile_of_3(t_pile **pile_a);
-void	rev_pile_of_3(t_pile **pile_b);
+//void	rev_pile_of_3(t_pile **pile_b);
 int		find_max_pos(t_pile **pile);
+int		find_min_pos(t_pile **pile);
+
+/*Pile of 5*/
+void	pile_of_5(t_pile **pile_a, t_pile **pile_b);
 
 #endif

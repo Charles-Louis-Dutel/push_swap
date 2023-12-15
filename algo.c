@@ -3,49 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 20:24:37 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/13 15:18:51 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/15 00:25:40 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// static int	is_pile_b_sorted(t_pile **pile_b)
-// {
-// 	t_pile	*temp;
-// 	int		max;
-// 	int		len;
-
-// 	temp = *pile_b;
-// 	max = temp->nbr;
-// 	temp = temp->next;
-// 	while (temp->next)
-// 	{
-// 		if (max < temp->nbr)
-// 			return (1);
-// 		max = temp->nbr;
-// 		temp = temp->next;
-// 	}
-// 	return (0);
-// }
-
-int	find_minimum(t_pile **pile_b)
-{
-	t_pile	*temp;
-	int		min;
-
-	temp = *pile_b;
-	min = temp->nbr;
-	while (temp)
-	{
-		if (min > temp->nbr)
-			min = temp->nbr;
-		temp = temp->next;
-	}
-	return (min);
-}
 
 void	sort_and_push(t_pile **pile_a, t_pile **pile_b, int nbr_a)
 {
