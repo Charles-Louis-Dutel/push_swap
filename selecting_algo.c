@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   selecting_algo.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 18:37:43 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/14 23:30:00 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/16 13:55:18 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,12 @@ static int	is_pile_sorted(t_pile **pile)
 	return (0);
 }
 
-// static int	how_many_missplaced(t_pile	**pile)
-// {
-// 	t_pile	*temp;
-// 	int		missplaced;
-// 	int		actuel;
-
-// 	temp = *pile;
-// 	actuel = temp->nbr;
-// 	missplaced = 0;
-// 	temp = temp->next;
-// 	while (temp)
-// 	{
-// 		if (actuel > temp->nbr)
-// 			missplaced++;
-// 		actuel = temp->nbr;
-// 		temp = temp->next;
-// 	}
-// 	return (missplaced);
-// }
-
 void	choose_algo(t_pile **pile_a, t_pile **pile_b)
 {
 	int	len;
-	//int	missplaced;
 
 	if (is_pile_sorted(pile_a) == 1)
 	{
-		//missplaced = how_many_missplaced(pile_a);
-		//printf("%d\n", missplaced);
 		len = pile_len(pile_a);
 		if (len <= 3)
 			pile_of_3(pile_a);
