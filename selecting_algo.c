@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 18:37:43 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/16 13:55:18 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/17 20:36:51 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ void	choose_algo(t_pile **pile_a, t_pile **pile_b)
 		len = pile_len(pile_a);
 		if (len <= 3)
 			pile_of_3(pile_a);
-		else if (len <= 5)
-			pile_of_5(pile_a, pile_b);
 		else
 			sort_pile(pile_a, pile_b);
 	}

@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:08:55 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/17 10:55:48 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/17 21:47:48 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,13 @@ static int	calcul_move_b(t_pile **pile_b, int proxy_pos)
 	return (n_move_b);
 }
 
-static int	find_proxy_in_b(t_pile **pile_b, int nbr)
+static int	find_proxy_in_b(t_pile **pile_b, int nbr, int proxy_pos)
 {
 	t_pile	*temp;
-	int		proxy_pos;
 	int		proxy;
 	int		index;
 
 	temp = *pile_b;
-	proxy_pos = 0;
 	if (nbr < find_minimum(pile_b))
 		proxy_pos = find_min_pos(pile_b);
 	else if (nbr > find_maximum(pile_b))
@@ -58,6 +56,7 @@ static int	calculate_n_move(t_pile **pile_a, t_pile **pile_b, int index)
 {
 	t_pile	*temp;
 	int		n_move;
+	int		proxy_pos;
 
 	if (index < pile_len(pile_a) / 2)
 		n_move = index + 1;
@@ -69,8 +68,34 @@ static int	calculate_n_move(t_pile **pile_a, t_pile **pile_b, int index)
 		temp = temp->next;
 		index--;
 	}
-	n_move += find_proxy_in_b(pile_b, temp->nbr);
+	proxy_pos = 0;
+	n_move += find_proxy_in_b(pile_b, temp->nbr, proxy_pos);
 	return (n_move);
+}
+
+int	find_3_max(t_pile **pile_a)
+{
+	t_pile	*temp;
+	int		max;
+	int		min;
+	int		i;
+
+	max = find_maximum(pile_a);
+	i = 2;
+	while (i > 0)
+	{
+		temp = *pile_a;
+		min = find_minimum(pile_a);
+		while (temp)
+		{
+			if (min < temp->nbr && temp->nbr < max)
+				min = temp->nbr;
+			temp = temp->next;
+		}
+		max = min;
+		i--;
+	}
+	return (max);
 }
 
 int	find_cheapest(t_pile **pile_a, t_pile **pile_b)
@@ -88,7 +113,7 @@ int	find_cheapest(t_pile **pile_a, t_pile **pile_b)
 	while (temp)
 	{
 		n_move = calculate_n_move(pile_a, pile_b, index);
-		if (n_move < cheap_move)
+		if (n_move < cheap_move && temp->nbr < find_3_max(pile_a))
 		{
 			cheap_move = n_move;
 			cheap_index = index;

@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:02:51 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/17 10:39:14 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/17 22:04:20 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,11 @@ int		find_maximum(t_pile **pile);
 
 /*Find cheapest*/
 int		find_cheapest(t_pile **pile_a, t_pile **pile_b);
+int		find_3_max(t_pile **pile_a);
 
 /*Pile of 3*/
 void	pile_of_3(t_pile **pile_a);
 int		find_max_pos(t_pile **pile);
 int		find_min_pos(t_pile **pile);
-
-/*Pile of 5*/
-void	pile_of_5(t_pile **pile_a, t_pile **pile_b);
 
 #endif
