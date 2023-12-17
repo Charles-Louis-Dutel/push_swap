@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:08:55 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/16 16:06:02 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/17 10:55:48 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static int	find_proxy_in_b(t_pile **pile_b, int nbr)
 	int		index;
 
 	temp = *pile_b;
+	proxy_pos = 0;
 	if (nbr < find_minimum(pile_b))
 		proxy_pos = find_min_pos(pile_b);
 	else if (nbr > find_maximum(pile_b))

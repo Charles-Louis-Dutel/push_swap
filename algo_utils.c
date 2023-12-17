@@ -6,52 +6,37 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:52:41 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/16 16:02:25 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/16 18:11:06 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int	find_position(t_pile **pile_b, int min)
-// {
-// 	t_pile	*temp;
-// 	int		pos;
-// 	int		pos_inf;
-
-// 	temp = *pile_b;
-// 	pos = 0;
-// 	pos_inf = 0;
-// 	while (temp)
-// 	{
-// 		if (temp->nbr == min)
-// 			pos_inf = pos + 1;
-// 		pos++;
-// 		temp = temp->next;
-// 	}
-// 	return (pos_inf);
-// }
-
-// int	find_position_2(t_pile **pile_b, int min, int nbr_a)
-// {
-// 	t_pile	*temp;
-// 	int		pos;
-// 	int		pos_inf;
-
-// 	temp = *pile_b;
-// 	pos = 0;
-// 	pos_inf = 0;
-// 	while (temp)
-// 	{
-// 		if (temp->nbr < nbr_a && temp->nbr >= min)
-// 		{
-// 			min = temp->nbr;
-// 			pos_inf = pos;
-// 		}
-// 		pos++;
-// 		temp = temp->next;
-// 	}
-// 	return (pos_inf);
-// }
+void	sort_help(t_pile **pile_a, t_pile **pile_b, int m_a, int m_b)
+{
+	if (m_a < pile_len(pile_a) / 2 && m_b < pile_len(pile_b) / 2)
+	{
+		while (m_a > 0 && m_b > 0)
+		{
+			rotate(pile_a, pile_b);
+			m_a--;
+			m_b--;
+		}
+	}
+	else if (m_a > pile_len(pile_a) / 2 && m_b > pile_len(pile_b) / 2)
+	{
+		while (m_a < pile_len(pile_a) && m_b < pile_len(pile_b))
+		{
+			rev_rotate(pile_a, pile_b);
+			m_a++;
+			m_b++;
+		}
+	}
+	if (m_a > 0 && m_a <= pile_len(pile_a))
+		sort_help_a(pile_a, m_a);
+	if (m_b > 0 && m_b <= pile_len(pile_b))
+		sort_help_b(pile_b, m_b);
+}
 
 void	sort_help_a(t_pile **pile_a, int pos_inf)
 {
