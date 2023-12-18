@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:02:51 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/17 22:04:20 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/18 15:58:02 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	rev_rotate(t_pile **pile_a, t_pile **pile_b);
 /*Algo*/
 void	choose_algo(t_pile **pile_a, t_pile **pile_b);
 void	sort_pile(t_pile **pile_a, t_pile **pile_b);
+int		find_index_b(t_pile **pile_b, int n_to_push, int proxy_pos);
+void	sort_with_chunk(t_pile **pile_a, t_pile **pile_b);
 
 /*Alog_utils*/
 void	sort_help(t_pile **pile_a, t_pile **pile_b, int m_a, int m_b);
@@ -66,6 +68,9 @@ int		find_maximum(t_pile **pile);
 /*Find cheapest*/
 int		find_cheapest(t_pile **pile_a, t_pile **pile_b);
 int		find_3_max(t_pile **pile_a);
+
+/*Find cheapest in chunk*/
+int		find_cheapest_chunk(t_pile **pile_a, t_pile **pile_b);
 
 /*Pile of 3*/
 void	pile_of_3(t_pile **pile_a);

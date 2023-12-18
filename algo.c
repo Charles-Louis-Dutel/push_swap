@@ -6,13 +6,13 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 20:24:37 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/17 21:51:26 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/18 15:58:21 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	find_index_b(t_pile **pile_b, int n_to_push, int proxy_pos)
+int	find_index_b(t_pile **pile_b, int n_to_push, int proxy_pos)
 {
 	t_pile	*temp;
 	int		proxy;
@@ -104,7 +104,8 @@ void	sort_pile(t_pile **pile_a, t_pile **pile_b)
 		cheap_index = find_cheapest(pile_a, pile_b);
 		sort_and_push(pile_a, pile_b, cheap_index);
 	}
-	sort_b(pile_b);
+	if (pile_len(pile_b) > 1)
+		sort_b(pile_b);
 	pile_of_3(pile_a);
 	while (pile_len(pile_b) != 0)
 	{
