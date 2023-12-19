@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 18:24:05 by cdutel            #+#    #+#             */
-/*   Updated: 2023/11/12 10:25:43 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/19 13:00:52 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,3 @@ char	*ft_itoa(int n)
 	tab[i] = '\0';
 	return (tab);
 }
-/*
-int main()
-{
-	char *tab = ft_itoa(-2);
-	int i = 0;
-	__builtin_printf("%s\n", tab);
-	while (i < 14)
-	{
-		__builtin_printf("%c\n", tab[i]);
-		i++;
-	}
-	return 0;
-}*/

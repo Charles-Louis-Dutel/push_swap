@@ -32,17 +32,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		j++;
 	return (j);
 }
-
-/*int main()
-{
-	char src[] = "coucou";
-	char dest1[10];
-	char dest2[10];
-	memset(dest1, 'A', 10);
-	memset(dest2, 'A', 10);
-
-	__builtin_printf("%ld\n", strlcpy(dest1, src, 0));
-	__builtin_printf("%s\n", dest1);
-	__builtin_printf("%ld\n", strlcpy(dest2, src, 0));
-	__builtin_printf("%s\n", dest2);
-}*/

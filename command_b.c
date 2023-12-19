@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 18:25:08 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/12 18:33:04 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/19 12:56:10 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	swap_b(t_pile **pile)
 		push_pile(pile, first);
 		push_pile(pile, second);
 	}
-	printf("sb\n");
+	ft_printf("sb\n");
 }
 
 void	push_b(t_pile **from, t_pile **to)
@@ -42,7 +42,7 @@ void	push_b(t_pile **from, t_pile **to)
 	first = temp->nbr;
 	push_pile(to, first);
 	pop_one(from);
-	printf("pb\n");
+	ft_printf("pb\n");
 }
 
 void	rotate_b(t_pile **pile)
@@ -59,7 +59,7 @@ void	rotate_b(t_pile **pile)
 		last = get_last(pile);
 		last->next = new_elem(first);
 	}
-	printf("rb\n");
+	ft_printf("rb\n");
 }
 
 void	rev_rotate_b(t_pile **pile)
@@ -78,5 +78,5 @@ void	rev_rotate_b(t_pile **pile)
 	}
 	temp->next = NULL;
 	free(last);
-	printf("rrb\n");
+	ft_printf("rrb\n");
 }

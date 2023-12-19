@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:48:48 by cdutel            #+#    #+#             */
-/*   Updated: 2023/10/31 15:54:07 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/19 13:02:47 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-	//char s[] = "tripouille";
-	//char s2[] = "ltripouiel";
-	char s3[] = "";
-
-	__builtin_printf("%s\n", strrchr(s3, 0));
-	__builtin_printf("%s\n", ft_strrchr(s3, 0));
-	return 0;
-}*/

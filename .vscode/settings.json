@@ -11,6 +11,9 @@
 		"push_swap.h": "c",
 		"random": "c",
 		"limits": "c",
-		"algorithm": "c"
+		"algorithm": "c",
+		"libft.h": "c",
+		"ft_printf.h": "c",
+		"get_next_line.h": "c"
 	},
     }

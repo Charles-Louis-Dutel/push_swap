@@ -1,4 +1,8 @@
 NAME = libft.a
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
+###########################Sources#############################
 SRCS = \
 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 	ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
@@ -14,9 +18,8 @@ SRCS = \
 	ft_lstnew.c ft_lstsize.c ft_lstiter.c \
 	ft_lstlast.c
 
+###########################Objects#############################
 OBJS = ${SRCS:.c=.o}
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
 
 %.o:%.c
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -24,9 +27,13 @@ CFLAGS = -Wall -Wextra -Werror
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar rcs ${NAME} ${OBJS} $?
+	@${MAKE} -C ./ft_printf
+	@${MAKE} -C ./get_next_line
+	ar rcs ${NAME} ${OBJS} ./ft_printf/libftprintf.a ./get_next_line/libgnl.a $?
 
 clean:
+	@${MAKE} -C ./ft_printf fclean
+	@${MAKE} -C ./get_next_line fclean
 	rm -f ${OBJS}
 
 fclean: clean

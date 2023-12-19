@@ -39,15 +39,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-
-/*
-int	main(void)
-{
-	//char haystack[30] = "aaabcabcd";
-	//char needle[10] = "aabc";
-	//char *empty = (char *)"";
-
-	//__builtin_printf("%s\n", strnstr(((void*)0), "fake", 3));
-	//__builtin_printf("%s\n", ft_strnstr(((void*)0), "fake", 3));
-	return (0);
-}*/

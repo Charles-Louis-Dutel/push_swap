@@ -38,31 +38,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-int	main(void)
-{
-	int i;
-	//char originale[] = "bonjour";
-	int data[] = { 20, 30, 40, 50, 60, 70, 80, 90, 100, 0 };
-
-	for(i=0; i<10; i++)
-		printf("%d ", data[i]);
-	printf("\n");
-
-	void *source = (void *) data;
-	void *destination = (void *) (data+1);
-	unsigned long size = sizeof(int *) * 10;
-	//memmove (destination, source, size);
-	ft_memmove (destination, source, size);
-
-	for(i=0; i<10; i++)
-		printf("%d ", data[i]);
-	printf("\n");
-
-	data[0] = 10;
-	for(i=0; i<10; i++)
-		printf("%d ", data[i]);
-	printf("\n");
-
-	return(0);
-}*/

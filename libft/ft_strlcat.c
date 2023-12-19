@@ -40,13 +40,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + len_src);
 	return (len_dst + len_src);
 }
-
-/*int main()
-{
-	char b[0xF] = "nyan !";
-	char d[20];
-
-	__builtin_printf("%zu\n", ft_strlcat(d, b ,0));
-	//__builtin_printf("%zu\n", strlcat(((void*)0), b ,0));
-	return 0;
-}*/

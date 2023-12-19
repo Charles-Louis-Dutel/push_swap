@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 17:20:52 by cdutel            #+#    #+#             */
-/*   Updated: 2023/11/20 14:55:46 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/19 13:02:05 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,24 +91,3 @@ char	**ft_split(char const *s, char c)
 	dest[j] = NULL;
 	return (dest);
 }
-/*
-int	main(void)
-{
-	char const *s ="   bonjour comment ca va ?   ";
-	char **test;
-	int i;
-	int mot;
-
-	mot = ft_n_mot(s, ' ');
-	//__builtin_printf("%d\n", mot);
-	test = ft_split(s, ' ');
-	i = 0;
-	while (i < mot + 1)
-	{
-		__builtin_printf("%s\n", test[i]);
-		i++;
-	}
-	//__builtin_printf("%s\n", test[0]);
-
-	return (0);
-}*/

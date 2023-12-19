@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:02:51 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/18 15:58:02 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/19 13:06:23 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include "libft/libft.h"
+# include "libft/ft_printf/ft_printf.h"
+# include "libft/get_next_line/get_next_line.h"
 
 typedef struct pile_elem
 {

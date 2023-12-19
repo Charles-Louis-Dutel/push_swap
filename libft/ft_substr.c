@@ -56,9 +56,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_remplir_str(s, str, start, len);
 	return (str);
 }
-/*
-int	main(void)
-{
-	__builtin_printf("%s\n", ft_substr("test", 1, 2));
-	return (0);
-}*/

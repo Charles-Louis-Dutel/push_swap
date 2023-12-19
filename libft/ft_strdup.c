@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:06:53 by cdutel            #+#    #+#             */
-/*   Updated: 2023/10/31 14:50:00 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/19 13:02:18 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,3 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
-/*
-int	main(void)
-{
-	char	*copy;
-	char	*copy2;
-
-	char c[] = "15rs8hg4trsh*";
-	copy2 = strdup(c);
-	copy = ft_strdup(c);
-	__builtin_printf("%s\n", copy2);
-	__builtin_printf("%s\n", copy);
-}*/

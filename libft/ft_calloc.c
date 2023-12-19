@@ -26,35 +26,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
-/*
-int	main(void)
-{
-	int i;
-	int * pointer = (int *) calloc( 10, sizeof(int) );
-	for (i=0; i<10; i++ ) {
-		printf( "%d ", pointer[i] );
-	}
-	printf( "\n" );
-	for ( i=0; i<10-1; i++ ) {
-		pointer[i] = i;
-	}
-	for (i=0; i<10; i++ ) {
-		printf( "%d ", pointer[i] );
-	}
-	printf( "\n\n" );
-
-
-	int *pointer2 = (int *) ft_calloc( 10, sizeof(int) );
-	for (i=0; i<10; i++ )
-		printf( "%d ", pointer2[i] );
-	printf( "\n" );
-	for ( i=0; i<10-1; i++ )
-		pointer2[i] = i;
-	for (i=0; i<10; i++ )
-		printf( "%d ", pointer2[i] );
-	printf( "\n" );
-
-	free( pointer );
-	free( pointer2 );
-	return (0);
-}*/

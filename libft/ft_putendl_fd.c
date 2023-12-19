@@ -26,11 +26,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
-/*
-int	main(void)
-{
-	int fd;
-	fd = open("test.txt", O_RDWR);
-	ft_putendl_fd("bonjour ca va", fd);
-	return (0);
-}*/

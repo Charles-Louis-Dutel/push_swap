@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 17:26:57 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/16 17:32:13 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/19 13:03:40 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rotate(t_pile **pile_a, t_pile **pile_b)
 {
 	rotate_help(pile_a);
 	rotate_help(pile_b);
-	printf("rr\n");
+	ft_printf("rr\n");
 }
 
 static void	rev_rotate_help(t_pile **pile)
@@ -57,5 +57,5 @@ void	rev_rotate(t_pile **pile_a, t_pile **pile_b)
 {
 	rev_rotate_help(pile_a);
 	rev_rotate_help(pile_b);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 }
