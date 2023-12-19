@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:30:24 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/18 17:44:26 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/18 18:06:20 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,33 +39,7 @@ static int	find_index_a(t_pile **pile_a, int n_to_push, int proxy_pos)
 	return (proxy_pos);
 }
 
-// static void	sort_help_chunk(t_pile **pile_a, t_pile **pile_b, int m_a, int m_b)
-// {
-// 	if (m_a < pile_len(pile_a) / 2 && m_b < pile_len(pile_b) / 2)
-// 	{
-// 		while (m_a > 0 && m_b > 0)
-// 		{
-// 			rotate(pile_a, pile_b);
-// 			m_a--;
-// 			m_b--;
-// 		}
-// 	}
-// 	else if (m_a > pile_len(pile_a) / 2 && m_b > pile_len(pile_b) / 2)
-// 	{
-// 		while (m_a < pile_len(pile_a) && m_b < pile_len(pile_b))
-// 		{
-// 			rev_rotate(pile_a, pile_b);
-// 			m_a++;
-// 			m_b++;
-// 		}
-// 	}
-// 	if (m_a > 0 && m_a <= pile_len(pile_a))
-// 		sort_help_a(pile_a, m_a);
-// 	if (m_b > 0 && m_b <= pile_len(pile_b))
-// 		sort_help_b(pile_b, m_b);
-// }
-
-static void	sort_and_push_chunk(t_pile **pile_a, t_pile **pile_b, int cheap_index)
+static void	sort_push(t_pile **pile_a, t_pile **pile_b, int cheap_index)
 {
 	t_pile	*temp;
 	int		n_to_push;
@@ -112,6 +86,18 @@ static int	find_chunk_max(t_pile **pile_a, int chunk_size)
 	return (max);
 }
 
+static void	sort_with_chunk_2(t_pile **pile_a, t_pile **pile_b)
+{
+	int	cheap;
+
+	while (pile_len(pile_b) > 0)
+	{
+		cheap = find_cheapest_chunk(pile_a, pile_b);
+		sort_push(pile_a, pile_b, cheap);
+	}
+	sort_help_a(pile_a, find_min_pos(pile_a));
+}
+
 void	sort_with_chunk(t_pile **pile_a, t_pile **pile_b)
 {
 	int	len;
@@ -125,7 +111,7 @@ void	sort_with_chunk(t_pile **pile_a, t_pile **pile_b)
 		chunk_max = find_chunk_max(pile_a, chunk_size);
 		n = find_chunk_max(pile_a, chunk_size / 2);
 		len = 0;
-		while(len < chunk_size)
+		while (len < chunk_size)
 		{
 			while ((*pile_a)->nbr > chunk_max)
 				rotate_a(pile_a);
@@ -136,10 +122,5 @@ void	sort_with_chunk(t_pile **pile_a, t_pile **pile_b)
 		}
 	}
 	pile_of_3(pile_a);
-	while (pile_len(pile_b) > 0)
-	{
-		n = find_cheapest_chunk(pile_a, pile_b);
-		sort_and_push_chunk(pile_a, pile_b, n);
-	}
-	sort_help_a(pile_a, find_min_pos(pile_a));
+	sort_with_chunk_2(pile_a, pile_b);
 }
