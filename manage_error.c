@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:22:15 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/12 19:14:53 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/20 09:40:00 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,17 @@ int	check_doublons(t_pile *pile)
 	}
 	free(tab);
 	return (0);
+}
+
+void	ft_le_xav(char **dest)
+{
+	size_t	i;
+
+	i = 0;
+	while (dest[i])
+	{
+		free(dest[i]);
+		i++;
+	}
+	free(dest);
 }

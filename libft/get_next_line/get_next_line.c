@@ -6,16 +6,16 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:01:32 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/19 11:35:54 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/20 09:41:45 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	ft_free_list(my_list *temp)
+void	ft_free_list(t_my_list *temp)
 {
-	my_list	*current;
-	my_list	*next;
+	t_my_list	*current;
+	t_my_list	*next;
 
 	current = temp;
 	while (current)
@@ -30,13 +30,13 @@ void	ft_free_list(my_list *temp)
 /*Fonction ft_update_temp : fonction qui permet de mettre à jour
 la liste chainnée après chaque appel de 'read'. Le nouvel élément
 est ajouté à la fin de la liste.*/
-void	ft_update_temp(char *dest, my_list **temp, int value)
+void	ft_update_temp(char *dest, t_my_list **temp, int value)
 {
-	int		i;
-	my_list	*last;
-	my_list	*next_temp;
+	int			i;
+	t_my_list	*last;
+	t_my_list	*next_temp;
 
-	next_temp = malloc(sizeof(my_list));
+	next_temp = malloc(sizeof(t_my_list));
 	if (!next_temp)
 		return ;
 	next_temp->next = NULL;
@@ -61,10 +61,10 @@ void	ft_update_temp(char *dest, my_list **temp, int value)
 
 /*Fonction ft_check_temp : fonction qui permet de regarder
 si un '\n' est présent dans le dernier élément de la liste chainnée*/
-int	ft_check_temp(my_list *temp)
+int	ft_check_temp(t_my_list *temp)
 {
-	int		i;
-	my_list	*last;
+	int			i;
+	t_my_list	*last;
 
 	if (!temp)
 		return (0);
@@ -82,7 +82,7 @@ int	ft_check_temp(my_list *temp)
 /*Fonction ft_read : fonction qui va lire dans le fichier
 correspondant au fd, la boucle sert à lire tant qu'un '\n'
 n'est pas rencontré ou qu'il y a quelque chose à lire*/
-void	ft_read(my_list **temp, int fd)
+void	ft_read(t_my_list **temp, int fd)
 {
 	char	*dest;
 	int		value;
@@ -110,8 +110,8 @@ void	ft_read(my_list **temp, int fd)
 validité du fd et du Buffer_size et appelle les autres fonctions*/
 char	*get_next_line(int fd)
 {
-	static my_list	*temp;
-	char			*line;
+	static t_my_list	*temp;
+	char				*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);

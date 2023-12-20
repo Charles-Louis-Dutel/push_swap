@@ -6,13 +6,13 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 18:37:43 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/18 17:46:33 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/19 15:46:31 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	is_pile_sorted(t_pile **pile)
+int	is_pile_sorted(t_pile **pile)
 {
 	t_pile	*temp;
 	int		max;

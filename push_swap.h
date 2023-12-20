@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:02:51 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/19 13:06:23 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/19 17:57:55 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ t_pile	*new_elem(int nbr);
 t_pile	*get_last(t_pile **pile);
 int		pile_len(t_pile **pile);
 void	print_pile(t_pile **pile);
+t_pile	*set_pile(int argc, char **argv);
+t_pile	*set_pile_2(int argc, char **argv);
+void	ft_le_xav(char **dest);
 
 /*Command*/
 void	swap_a(t_pile **pile);
@@ -57,6 +60,7 @@ void	rev_rotate(t_pile **pile_a, t_pile **pile_b);
 
 /*Algo*/
 void	choose_algo(t_pile **pile_a, t_pile **pile_b);
+int		is_pile_sorted(t_pile **pile);
 void	sort_pile(t_pile **pile_a, t_pile **pile_b);
 int		find_index_b(t_pile **pile_b, int n_to_push, int proxy_pos);
 void	sort_with_chunk(t_pile **pile_a, t_pile **pile_b);

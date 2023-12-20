@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:01:19 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/19 11:45:25 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/20 09:42:15 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*Fonction ft_malloc_line : fonction qui permet
 de malloc la bonne taille pour la prochiane ligne du
 au manque de place dans la fonction précédente.*/
-static char	*ft_malloc_line(my_list *temp)
+static char	*ft_malloc_line(t_my_list *temp)
 {
 	char	*new_line;
 	int		i;
@@ -45,7 +45,7 @@ static char	*ft_malloc_line(my_list *temp)
 fonction ft_check_temp, cette fonction permet de récupérer
 tous les caractères jusqu'au '\n' pour pouvoir retourner
 le contenu de la ligne.*/
-char	*ft_new_line(my_list *temp)
+char	*ft_new_line(t_my_list *temp)
 {
 	char	*new_line;
 	int		i;
@@ -78,14 +78,14 @@ cette fonction permet de mettre à jour la liste chainnée static.
 Au prochain appel de get_next_line, la liste temp contiendra
 le reste des caractères qui avaient été lu et qui se trouvaient
 après le 1er '\n'.*/
-void	ft_new_temp(my_list **temp)
+void	ft_new_temp(t_my_list **temp)
 {
-	int		i;
-	int		j;
-	my_list	*new_temp;
-	my_list	*last;
+	int			i;
+	int			j;
+	t_my_list	*new_temp;
+	t_my_list	*last;
 
-	new_temp = malloc(sizeof(my_list));
+	new_temp = malloc(sizeof(t_my_list));
 	if (!temp || !new_temp)
 		return ;
 	new_temp->next = NULL;
@@ -106,9 +106,9 @@ void	ft_new_temp(my_list **temp)
 	*temp = new_temp;
 }
 
-my_list	*ft_get_last(my_list *temp)
+t_my_list	*ft_get_last(t_my_list *temp)
 {
-	my_list	*last;
+	t_my_list	*last;
 
 	last = temp;
 	while (last && last->next)
