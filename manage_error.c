@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:22:15 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/20 09:40:00 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/01/05 16:31:10 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	check_args(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
+		if (argv[i][0] == '\0')
+			return (1);
 		while (argv[i][j])
 		{
 			if (!(argv[i][j] == '-' || argv[i][j] == '+' ||

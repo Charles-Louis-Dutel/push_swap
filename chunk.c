@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:30:24 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/18 18:06:20 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/01/05 15:51:14 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	sort_with_chunk(t_pile **pile_a, t_pile **pile_b)
 
 	while (pile_len(pile_a) > 3)
 	{
-		chunk_size = pile_len(pile_a) / 4;
+		chunk_size = pile_len(pile_a) / 3;
 		chunk_max = find_chunk_max(pile_a, chunk_size);
 		n = find_chunk_max(pile_a, chunk_size / 2);
 		len = 0;

@@ -6,11 +6,10 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:34:53 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/19 18:00:47 by cdutel           ###   ########.fr       */
+/*   Updated: 2023/12/28 11:27:57 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
 static int	case_one_arg(const char *argv)

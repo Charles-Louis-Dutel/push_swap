@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:26:44 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/20 09:22:51 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/01/05 16:03:53 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,11 @@ static int	exec_instruction(t_pile **pile_a, t_pile **pile_b, const char *ins)
 static void	get_instructions(t_pile **pile_a, t_pile **pile_b)
 {
 	int		error;
+	int		len;
 	char	*ins;
 
 	error = 0;
+	len = pile_len(pile_a);
 	while (1)
 	{
 		ins = get_next_line(0);
@@ -60,10 +62,10 @@ static void	get_instructions(t_pile **pile_a, t_pile **pile_b)
 		write(2, "Error\n", 6);
 		return ;
 	}
-	if (is_pile_sorted(pile_a) == 1)
-		ft_printf("KO\n");
-	else
+	if (is_pile_sorted(pile_a) == 0 && pile_len(pile_a) == len)
 		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
 }
 
 static int	case_one_arg(const char *argv)

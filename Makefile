@@ -22,24 +22,21 @@ OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 OBJS_ALL = ${OBJS} ${OBJS_BONUS}
 
 ###########################Libs#############################
-LIBFT = ./libft/libft.a
-FT_PRINTF = ./libft/ft_printf/libftprintf.a
-GNL = ./libft/get_next_line/libgnl.a
+LIBFT = includes/libft.a
+FT_PRINTF = includes/libftprintf.a
+GNL = includes/libgnl.a
 ALL_LIB = ${LIBFT} ${FT_PRINTF} ${GNL}
 
 ###########################Rules#############################
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	@${MAKE} -C ./libft
 	${CC} ${CFLAGS} ${OBJS} ${ALL_LIB} -o ${NAME}
 
 bonus: ${OBJS_BONUS}
-	@${MAKE} -C ./libft
 	${CC} ${CFLAGS} ${OBJS_BONUS} ${ALL_LIB} -o ${NAME_BONUS}
 
 clean:
-	@${MAKE} -C ./libft fclean
 	rm -f ${OBJS_ALL}
 
 fclean: clean
