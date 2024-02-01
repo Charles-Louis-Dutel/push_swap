@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:02:51 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/28 11:26:41 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/02/01 15:28:55 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "includes/libft.h"
-# include "includes/ft_printf.h"
-# include "includes/get_next_line.h"
+# include "../libft/libft.h"
+# include "../libft/ft_printf/ft_printf.h"
+# include "../libft/get_next_line/get_next_line.h"
 
 typedef struct pile_elem
 {
@@ -27,7 +27,7 @@ typedef struct pile_elem
 }	t_pile;
 
 /*Error management*/
-int		check_args(int argc, char **argv);
+int		check_args(int argc, char **argv, int i);
 long	ft_atoi_modif(const char *str);
 int		check_doublons(t_pile *pile);
 

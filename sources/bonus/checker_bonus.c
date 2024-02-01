@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_checker.c                                    :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:26:44 by cdutel            #+#    #+#             */
-/*   Updated: 2024/01/05 16:03:53 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/02/01 17:46:32 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "bonus_checker.h"
+#include "checker_bonus.h"
 
 static int	exec_instruction(t_pile **pile_a, t_pile **pile_b, const char *ins)
 {
@@ -79,8 +78,9 @@ static int	case_one_arg(const char *argv)
 	i = 0;
 	while (args[i])
 		i++;
-	if (check_args(i, args) == 1)
+	if (check_args(i, args, 0) == 1)
 	{
+		ft_le_xav(args);
 		write(2, "Error\n", 6);
 		return (1);
 	}
@@ -105,7 +105,7 @@ int	main(int argc, char **argv)
 		return (case_one_arg(argv[1]));
 	else if (argc > 2)
 	{
-		if (check_args(argc, argv) == 1)
+		if (check_args(argc, argv, 1) == 1)
 		{
 			write(2, "Error\n", 6);
 			return (1);

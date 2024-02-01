@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   manage_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:22:15 by cdutel            #+#    #+#             */
-/*   Updated: 2024/01/05 16:31:10 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/02/01 16:56:12 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_args(int argc, char **argv)
+int	check_args(int argc, char **argv, int i)
 {
-	int	i;
-	int	j;
-
-	i = 1;
+	int (j) = 0;
 	while (i < argc)
 	{
 		j = 0;

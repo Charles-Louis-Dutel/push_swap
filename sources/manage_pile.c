@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   manage_pile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:14:03 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/13 13:25:25 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/02/01 16:56:19 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 t_pile	*new_pile(void)
 {

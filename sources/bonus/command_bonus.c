@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_command.c                                    :+:      :+:    :+:   */
+/*   command_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
+/*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 09:14:02 by cdutel            #+#    #+#             */
-/*   Updated: 2023/12/20 09:26:50 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/02/01 16:55:51 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus_checker.h"
+#include "checker_bonus.h"
 
 void	swap_bonus(t_pile **pile)
 {
