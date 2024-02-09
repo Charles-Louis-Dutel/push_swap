@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:22:15 by cdutel            #+#    #+#             */
-/*   Updated: 2024/02/01 16:56:12 by cdutel           ###   ########.fr       */
+/*   Updated: 2024/02/09 09:31:13 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	check_args(int argc, char **argv, int i)
 long	ft_atoi_modif(const char *str)
 {
 	int			i;
-	long long	nb;
+	double		nb;
 	int			sign;
 
 	i = 0;
@@ -62,7 +62,7 @@ long	ft_atoi_modif(const char *str)
 	nb *= sign;
 	if (nb < -2147483648 || nb > 2147483647)
 		return (11111111111);
-	return (nb);
+	return ((long)nb);
 }
 
 static int	*pile_to_tab(int *tab, t_pile *pile)
